@@ -18,6 +18,7 @@ struct SnapCarousel<Content: View, T: Identifiable>: View {
     
     @GestureState var offset: CGFloat = 0
     @State var currentIndex: Int = 0
+    @State private var isViewLoaded = false
     
     init(
         spacing: CGFloat = 15,
@@ -47,7 +48,7 @@ struct SnapCarousel<Content: View, T: Identifiable>: View {
                 }
             }
             .padding(.horizontal, spacing)
-            .offset(x: (CGFloat(currentIndex) * -width) + (currentIndex != 0 ? adjustmentWidth : 0) + offset)
+            .offset(x: (CGFloat(currentIndex) * -width) + adjustmentWidth + offset)
             .gesture(
                 DragGesture()
                     .updating($offset, body: { value, out, _ in
@@ -70,8 +71,14 @@ struct SnapCarousel<Content: View, T: Identifiable>: View {
                         index = max(min(currentIndex + Int(roundIndex), list.count - 1), 0)
                     })
             )
+            .onAppear {
+                DispatchQueue.main.async {
+                    currentIndex = index
+                    isViewLoaded = true
+                }
+            }
         }
-        .animation(.easeInOut, value: offset == 0)
+        .animation(.linear, value: currentIndex)
     }
 }
 
