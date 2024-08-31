@@ -9,6 +9,13 @@ import SwiftUI
 
 struct NowShowingView: View {
     @Binding var currentIndex: Int
+    let movies: [Movie]
+    
+    init(currentIndex: Binding<Int>, movies: [Movie]) {
+        self._currentIndex = currentIndex
+        self.movies = Array(movies.prefix(min(5, movies.count)))
+    }
+    
     var body: some View {
         Text("**Now** Showing")
             .foregroundStyle(.white)
@@ -19,11 +26,11 @@ struct NowShowingView: View {
                 spacing: 20,
                 trailingSpace: 180,
                 index: $currentIndex,
-                list: moviesDummy
+                list: movies
             ) { movie in
                 VStack(spacing: 10) {
                     GeometryReader { proxy in
-                        AsyncImage(url: URL(string: movie.backdropPath)) { image in
+                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + movie.posterPath)) { image in
                             image
                                 .resizable()
                                 .scaledToFill()
@@ -47,7 +54,7 @@ struct NowShowingView: View {
             .frame(maxHeight: 250)
             
             HStack(spacing: 4) {
-                ForEach(0..<moviesDummy.count) { index in
+                ForEach(0..<movies.count) { index in
                     Button {
                         
                     } label: {
@@ -62,5 +69,5 @@ struct NowShowingView: View {
 }
 
 #Preview {
-    NowShowingView(currentIndex: .constant(0))
+    NowShowingView(currentIndex: .constant(0), movies: moviesDummy)
 }

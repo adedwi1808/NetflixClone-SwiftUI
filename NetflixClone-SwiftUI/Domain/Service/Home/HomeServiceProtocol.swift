@@ -10,7 +10,7 @@ import Foundation
 protocol HomeServiceProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     
-    func getNowPlaying(endpoint: NetworkFactory) async throws -> MovieResponseModel
+    func getNowPlaying(endpoint: NetworkFactory) async throws -> PaginationResponseModel<MovieResponseModel>
 }
 
 final class HomeService: HomeServiceProtocol {
@@ -20,7 +20,7 @@ final class HomeService: HomeServiceProtocol {
         self.networker = networker
     }
     
-    func getNowPlaying(endpoint: NetworkFactory) async throws -> MovieResponseModel {
-        try await networker.taskAsync(type: MovieResponseModel.self, endPoint: endpoint, isMultipart: false)
+    func getNowPlaying(endpoint: NetworkFactory) async throws -> PaginationResponseModel<MovieResponseModel> {
+        try await networker.taskAsync(type: PaginationResponseModel<MovieResponseModel>.self, endPoint: endpoint, isMultipart: false)
     }
 }

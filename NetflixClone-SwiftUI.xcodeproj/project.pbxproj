@@ -26,6 +26,8 @@
 		ADCDD9AE2C83628F003070ED /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9AD2C83628F003070ED /* Data+Extension.swift */; };
 		ADCDD9B12C83638D003070ED /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9B02C83638D003070ED /* HomeServiceProtocol.swift */; };
 		ADCDD9B52C836406003070ED /* MovieResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9B42C836406003070ED /* MovieResponseModel.swift */; };
+		ADCDD9B92C836668003070ED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9B82C836668003070ED /* HomeViewModel.swift */; };
+		ADCDD9BC2C836AA2003070ED /* PaginationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9BB2C836AA2003070ED /* PaginationResponseModel.swift */; };
 		ADDE09642C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE09632C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift */; };
 		ADDE09662C815A3400D55FAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE09652C815A3400D55FAB /* ContentView.swift */; };
 		ADDE09682C815A4100D55FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDE09672C815A4100D55FAB /* Assets.xcassets */; };
@@ -73,6 +75,8 @@
 		ADCDD9AD2C83628F003070ED /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		ADCDD9B02C83638D003070ED /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
 		ADCDD9B42C836406003070ED /* MovieResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponseModel.swift; sourceTree = "<group>"; };
+		ADCDD9B82C836668003070ED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ADCDD9BB2C836AA2003070ED /* PaginationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationResponseModel.swift; sourceTree = "<group>"; };
 		ADDE09602C815A3400D55FAB /* NetflixClone-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDE09632C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixClone_SwiftUIApp.swift; sourceTree = "<group>"; };
 		ADDE09652C815A3400D55FAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				ADCDD9B32C8363F4003070ED /* Response */,
 				AD1363F82C816E2000FF7715 /* Movie.swift */,
+				ADCDD9BB2C836AA2003070ED /* PaginationResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +261,22 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		ADCDD9B62C836658003070ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDD9B72C836660003070ED /* Home */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ADCDD9B72C836660003070ED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDD9B82C836668003070ED /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		ADDE09572C815A3400D55FAB = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +339,7 @@
 		ADDE098D2C815AF000D55FAB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				ADCDD9B62C836658003070ED /* ViewModel */,
 				ADCDD9A52C8360ED003070ED /* Service */,
 				ADCDD99C2C835DB7003070ED /* Helper */,
 				AD1363F72C816E1000FF7715 /* Model */,
@@ -497,6 +519,7 @@
 				ADCDD9B12C83638D003070ED /* HomeServiceProtocol.swift in Sources */,
 				ADCDD9982C835B03003070ED /* ContinueWatchingView.swift in Sources */,
 				ADCDD9AE2C83628F003070ED /* Data+Extension.swift in Sources */,
+				ADCDD9B92C836668003070ED /* HomeViewModel.swift in Sources */,
 				ADCDD9B52C836406003070ED /* MovieResponseModel.swift in Sources */,
 				AD1363F92C816E2000FF7715 /* Movie.swift in Sources */,
 				AD1363EB2C815C9A00FF7715 /* HomeView.swift in Sources */,
@@ -507,6 +530,7 @@
 				AD1363F62C81677400FF7715 /* SnapCarousel.swift in Sources */,
 				ADCDD99E2C835DC5003070ED /* ConfigurationManager.swift in Sources */,
 				ADCDD9AA2C83618C003070ED /* NetworkError.swift in Sources */,
+				ADCDD9BC2C836AA2003070ED /* PaginationResponseModel.swift in Sources */,
 				ADCDD9A82C836115003070ED /* NetworkFactory.swift in Sources */,
 				ADCDD9AC2C8361D7003070ED /* Networker.swift in Sources */,
 				AD1363FD2C817D4500FF7715 /* SearchBar.swift in Sources */,

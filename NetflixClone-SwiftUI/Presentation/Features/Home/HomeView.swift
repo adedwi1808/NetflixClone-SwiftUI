@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var search: String = ""
-    @State var currentIndex: Int = 1
+    @StateObject var vm: HomeViewModel = HomeViewModel()
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 20) {
                 HomeHeaderView()
                 
-                SearchBar(text: $search, placeholder: "Search Movie")
+                SearchBar(text: $vm.search, placeholder: "Search Movie")
                 
-                NowShowingView(currentIndex: $currentIndex)
+                NowShowingView(currentIndex: $vm.currentIndex, movies: vm.movies)
                 
                 ContinueWatchingView()
             }
@@ -25,6 +25,11 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, minHeight: UIScreen.height, alignment: .top)
         }
         .background(.cetaceanBlue)
+        .onAppear {
+            Task {
+                try await vm.getNowPlaying()
+            }
+        }
     }
 }
 

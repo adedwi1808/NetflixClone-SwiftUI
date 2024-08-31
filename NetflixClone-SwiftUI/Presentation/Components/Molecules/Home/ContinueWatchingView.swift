@@ -45,7 +45,7 @@ fileprivate struct CellView: View  {
     let data: Movie
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
-            AsyncImage(url: URL(string: data.backdropPath)) { image in
+            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + data.posterPath)) { image in
                 image
                     .resizable()
                     .scaledToFill()
