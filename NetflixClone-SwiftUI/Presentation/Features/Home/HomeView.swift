@@ -16,10 +16,10 @@ struct HomeView: View {
                 HomeHeaderView()
                 
                 SearchBar(text: $vm.search, placeholder: "Search Movie")
+
+                NowShowingView(currentIndex: $vm.currentIndex, movies: vm.nowShowing)
                 
-                NowShowingView(currentIndex: $vm.currentIndex, movies: vm.movies)
-                
-                ContinueWatchingView()
+                ContinueWatchingView(movies: vm.continueWatching)
             }
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, minHeight: UIScreen.height, alignment: .top)

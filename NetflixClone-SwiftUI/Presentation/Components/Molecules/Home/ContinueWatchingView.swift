@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContinueWatchingView: View {
+    let movies: [Movie]
+    
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -27,7 +29,7 @@ struct ContinueWatchingView: View {
             }
             
             VStack(spacing: 12) {
-                ForEach(moviesDummy) { movie in
+                ForEach(movies) { movie in
                     CellView(data: movie)
                 }
             }
@@ -37,7 +39,7 @@ struct ContinueWatchingView: View {
 }
 
 #Preview {
-    ContinueWatchingView()
+    ContinueWatchingView(movies: moviesDummy)
         .background(.cetaceanBlue)
 }
 

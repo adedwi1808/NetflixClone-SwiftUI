@@ -9,7 +9,8 @@ import Foundation
 
 @MainActor
 final class HomeViewModel: ObservableObject {
-    @Published var movies: [Movie] = []
+    @Published var nowShowing: [Movie] = []
+    @Published var continueWatching: [Movie] = []
     @Published var search: String = ""
     @Published var currentIndex: Int = 1
     
@@ -22,10 +23,15 @@ final class HomeViewModel: ObservableObject {
     func getNowPlaying() async throws {
         do {
             let response = try await service.getNowPlaying(endpoint: .nowPlaying)
-            movies = response.results?.compactMap{
+            let movies = response.results?.compactMap{
                 $0.toMovie()
             } ?? []
-            print(movies.first)
+            
+            let maxMovie = max(movies.count - 1, 0)
+            
+            currentIndex = min(1, maxMovie)
+            nowShowing = Array(movies.prefix(min(10, maxMovie)))
+            continueWatching = Array(movies.prefix(min(4, maxMovie)))
         } catch {
             print(error.localizedDescription)
         }
