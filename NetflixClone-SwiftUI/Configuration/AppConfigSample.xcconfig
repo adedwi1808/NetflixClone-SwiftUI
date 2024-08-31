@@ -1,0 +1,13 @@
+//
+//  AppConfigSample.xcconfig
+//  NetflixClone-SwiftUI
+//
+//  Created by Ade Dwi Prayitno on 31/08/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+TMBD_BASE_URL = api.themoviedb.org/3/
+TMBD_ACCESS_TOKEN =
+TMBD_API_KEY =
