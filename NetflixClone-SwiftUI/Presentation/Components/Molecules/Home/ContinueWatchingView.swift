@@ -45,7 +45,7 @@ fileprivate struct CellView: View  {
     let data: Movie
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
-            AsyncImage(url: URL(string: data.movieBanner)) { image in
+            AsyncImage(url: URL(string: data.backdropPath)) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -63,7 +63,7 @@ fileprivate struct CellView: View  {
             VStack(alignment: .leading) {
                 Text(data.title)
                     .foregroundStyle(.white)
-                Text(data.description.prefix(12) + "...")
+                Text(data.overview.prefix(12) + "...")
                     .foregroundStyle(.gray)
             }
             .font(.system(.title3))

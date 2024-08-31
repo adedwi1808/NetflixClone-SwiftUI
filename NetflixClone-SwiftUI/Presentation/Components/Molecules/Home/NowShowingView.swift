@@ -23,7 +23,7 @@ struct NowShowingView: View {
             ) { movie in
                 VStack(spacing: 10) {
                     GeometryReader { proxy in
-                        AsyncImage(url: URL(string: movie.movieBanner)) { image in
+                        AsyncImage(url: URL(string: movie.backdropPath)) { image in
                             image
                                 .resizable()
                                 .scaledToFill()

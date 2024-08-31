@@ -20,6 +20,12 @@
 		ADCDD99E2C835DC5003070ED /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD99D2C835DC5003070ED /* ConfigurationManager.swift */; };
 		ADCDD9A12C835E0D003070ED /* AppConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ADCDD9A02C835E0D003070ED /* AppConfig.xcconfig */; };
 		ADCDD9A42C835F13003070ED /* AppConfigSample.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ADCDD9A32C835F13003070ED /* AppConfigSample.xcconfig */; };
+		ADCDD9A82C836115003070ED /* NetworkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9A72C836115003070ED /* NetworkFactory.swift */; };
+		ADCDD9AA2C83618C003070ED /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9A92C83618C003070ED /* NetworkError.swift */; };
+		ADCDD9AC2C8361D7003070ED /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9AB2C8361D7003070ED /* Networker.swift */; };
+		ADCDD9AE2C83628F003070ED /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9AD2C83628F003070ED /* Data+Extension.swift */; };
+		ADCDD9B12C83638D003070ED /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9B02C83638D003070ED /* HomeServiceProtocol.swift */; };
+		ADCDD9B52C836406003070ED /* MovieResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD9B42C836406003070ED /* MovieResponseModel.swift */; };
 		ADDE09642C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE09632C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift */; };
 		ADDE09662C815A3400D55FAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE09652C815A3400D55FAB /* ContentView.swift */; };
 		ADDE09682C815A4100D55FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDE09672C815A4100D55FAB /* Assets.xcassets */; };
@@ -61,6 +67,12 @@
 		ADCDD9A02C835E0D003070ED /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		ADCDD9A22C835E87003070ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADCDD9A32C835F13003070ED /* AppConfigSample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfigSample.xcconfig; sourceTree = "<group>"; };
+		ADCDD9A72C836115003070ED /* NetworkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFactory.swift; sourceTree = "<group>"; };
+		ADCDD9A92C83618C003070ED /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		ADCDD9AB2C8361D7003070ED /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		ADCDD9AD2C83628F003070ED /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		ADCDD9B02C83638D003070ED /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
+		ADCDD9B42C836406003070ED /* MovieResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponseModel.swift; sourceTree = "<group>"; };
 		ADDE09602C815A3400D55FAB /* NetflixClone-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDE09632C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixClone_SwiftUIApp.swift; sourceTree = "<group>"; };
 		ADDE09652C815A3400D55FAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1363F02C815F4900FF7715 /* UIScreen.swift */,
+				ADCDD9AD2C83628F003070ED /* Data+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -151,6 +164,7 @@
 		AD1363F72C816E1000FF7715 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ADCDD9B32C8363F4003070ED /* Response */,
 				AD1363F82C816E2000FF7715 /* Movie.swift */,
 			);
 			path = Model;
@@ -207,6 +221,41 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		ADCDD9A52C8360ED003070ED /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDD9AF2C836380003070ED /* Home */,
+				ADCDD9A62C8360F2003070ED /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		ADCDD9A62C8360F2003070ED /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDD9A72C836115003070ED /* NetworkFactory.swift */,
+				ADCDD9A92C83618C003070ED /* NetworkError.swift */,
+				ADCDD9AB2C8361D7003070ED /* Networker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		ADCDD9AF2C836380003070ED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDD9B02C83638D003070ED /* HomeServiceProtocol.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ADCDD9B32C8363F4003070ED /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDD9B42C836406003070ED /* MovieResponseModel.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		ADDE09572C815A3400D55FAB = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +279,7 @@
 		ADDE09622C815A3400D55FAB /* NetflixClone-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				ADCDD9A22C835E87003070ED /* Info.plist */,
 				ADCDD99F2C835DE5003070ED /* Configuration */,
 				ADDE098D2C815AF000D55FAB /* Domain */,
 				ADDE09902C815B7100D55FAB /* InitializedApp */,
@@ -268,6 +318,7 @@
 		ADDE098D2C815AF000D55FAB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				ADCDD9A52C8360ED003070ED /* Service */,
 				ADCDD99C2C835DB7003070ED /* Helper */,
 				AD1363F72C816E1000FF7715 /* Model */,
 				AD1363EF2C815F2E00FF7715 /* Extension */,
@@ -306,7 +357,6 @@
 		ADDE09912C815BB900D55FAB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				ADCDD9A22C835E87003070ED /* Info.plist */,
 				ADDE09672C815A4100D55FAB /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -444,7 +494,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCDD9B12C83638D003070ED /* HomeServiceProtocol.swift in Sources */,
 				ADCDD9982C835B03003070ED /* ContinueWatchingView.swift in Sources */,
+				ADCDD9AE2C83628F003070ED /* Data+Extension.swift in Sources */,
+				ADCDD9B52C836406003070ED /* MovieResponseModel.swift in Sources */,
 				AD1363F92C816E2000FF7715 /* Movie.swift in Sources */,
 				AD1363EB2C815C9A00FF7715 /* HomeView.swift in Sources */,
 				AD1363EE2C815CB900FF7715 /* NavigationManager.swift in Sources */,
@@ -453,6 +506,9 @@
 				ADCDD99B2C835D25003070ED /* DetailMovieView.swift in Sources */,
 				AD1363F62C81677400FF7715 /* SnapCarousel.swift in Sources */,
 				ADCDD99E2C835DC5003070ED /* ConfigurationManager.swift in Sources */,
+				ADCDD9AA2C83618C003070ED /* NetworkError.swift in Sources */,
+				ADCDD9A82C836115003070ED /* NetworkFactory.swift in Sources */,
+				ADCDD9AC2C8361D7003070ED /* Networker.swift in Sources */,
 				AD1363FD2C817D4500FF7715 /* SearchBar.swift in Sources */,
 				ADDE09642C815A3400D55FAB /* NetflixClone_SwiftUIApp.swift in Sources */,
 				AD1363F12C815F4A00FF7715 /* UIScreen.swift in Sources */,
