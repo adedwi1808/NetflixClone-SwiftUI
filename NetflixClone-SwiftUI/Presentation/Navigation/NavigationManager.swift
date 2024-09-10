@@ -29,14 +29,16 @@ class NavigationManager: ObservableObject {
 
 extension NavigationManager {
     @ViewBuilder
-        func RoutesDestination(selectedRoutes: Route) -> some View {
-            switch selectedRoutes {
-            default:
-                EmptyView()
-            }
+    func RoutesDestination(selectedRoutes: Route) -> some View {
+        switch selectedRoutes {
+        case .home:
+            HomeView()
+        default:
+            EmptyView()
         }
+    }
 }
 
 enum Route: Hashable {
-    
+    case home
 }

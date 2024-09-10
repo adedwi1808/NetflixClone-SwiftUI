@@ -11,10 +11,12 @@ struct ContentView: View {
     @StateObject var navigationManager: NavigationManager = NavigationManager()
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
-            HomeView()
-        }
-        .navigationDestination(for: Route.self) {
-            navigationManager.RoutesDestination(selectedRoutes: $0)
+            LoginView()
+                .environmentObject(navigationManager)
+                .navigationDestination(for: Route.self) {
+                    navigationManager.RoutesDestination(selectedRoutes: $0)
+                        .navigationBarBackButtonHidden()
+                }
         }
     }
 }
